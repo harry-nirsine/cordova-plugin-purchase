@@ -360,10 +360,12 @@ namespace CdvPurchase {
                 return;
             }
             const now = +new Date();
+            /* *a/ enable multiple update calls
             if (this.lastUpdate > now - this.minTimeBetweenUpdates) {
                 this.log.info('Skipping store.update() as the last call occurred less than store.minTimeBetweenUpdates millis ago.');
                 return;
             }
+            /* */
             this.lastUpdate = now;
             // Load products metadata
             for (const registration of this.registeredProducts.byPlatform()) {
